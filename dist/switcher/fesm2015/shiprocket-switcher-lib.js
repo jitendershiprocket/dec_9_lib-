@@ -20,9 +20,6 @@ class SwitcherComponent {
         this.data = '';
         this.isModalOpen = false;
     }
-    ngOnInit() {
-        console.log("enter in oninit =====");
-    }
     openModal() {
         this.isModalOpen = true;
     }
@@ -31,13 +28,33 @@ class SwitcherComponent {
     }
 }
 SwitcherComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, ngImport: i0, template: "<button (click)=\"openModal()\" class=\"p-0 me-2 appSwitcherBtn\">\n  <div _ngcontent-afi-c47=\"\" class=\"appSwitcherTxt\"> ALL PRODUCTS <img apppathcorrection=\"\" data-src=\"assets/svg/apps.svg\" class=\"ml-2 position-relative w-15\" style=\"top: -1px;\" src=\"https://sidebar-lastmile-stage.kartrocket.com/assets/svg/apps.svg\">\n  </div>\n</button>\n  <div *ngIf=\"isModalOpen\" class=\"sr-modal\">\n    <div class=\"sr-modal-content\">\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\n      <p>{{ data }}</p>\n    </div>\n  </div>", styles: [".sr-modal{display:block;position:fixed}.close{cursor:pointer}\n"], directives: [{ type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
+SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, ngImport: i0, template: `
+    <button (click)="openModal()">Open Modal</button>
+    <div *ngIf="isModalOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p>{{ data }}</p>
+      </div>
+    </div>
+  `, isInline: true, styles: ["\n    .modal { display: block; position: fixed; /* Add styles for your modal */ }\n    .modal-content { /* Add styles for content */ }\n    .close { cursor: pointer; }\n  "], directives: [{ type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-switcher',
-                    templateUrl: './switcher.component.html',
-                    styleUrls: ['./switcher.component.scss']
+                    template: `
+    <button (click)="openModal()">Open Modal</button>
+    <div *ngIf="isModalOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p>{{ data }}</p>
+      </div>
+    </div>
+  `,
+                    styles: [`
+    .modal { display: block; position: fixed; /* Add styles for your modal */ }
+    .modal-content { /* Add styles for content */ }
+    .close { cursor: pointer; }
+  `]
                 }]
         }], propDecorators: { data: [{
                 type: Input

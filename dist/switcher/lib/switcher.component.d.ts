@@ -1,9 +1,7 @@
-import { OnInit } from '@angular/core';
 import * as i0 from "@angular/core";
-export declare class SwitcherComponent implements OnInit {
+export declare class SwitcherComponent {
     data: string;
     isModalOpen: boolean;
-    ngOnInit(): void;
     openModal(): void;
     closeModal(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitcherComponent, never>;

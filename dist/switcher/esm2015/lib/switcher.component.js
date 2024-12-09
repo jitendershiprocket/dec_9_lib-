@@ -6,9 +6,6 @@ export class SwitcherComponent {
         this.data = '';
         this.isModalOpen = false;
     }
-    ngOnInit() {
-        console.log("enter in oninit =====");
-    }
     openModal() {
         this.isModalOpen = true;
     }
@@ -17,15 +14,35 @@ export class SwitcherComponent {
     }
 }
 SwitcherComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, ngImport: i0, template: "<button (click)=\"openModal()\" class=\"p-0 me-2 appSwitcherBtn\">\n  <div _ngcontent-afi-c47=\"\" class=\"appSwitcherTxt\"> ALL PRODUCTS <img apppathcorrection=\"\" data-src=\"assets/svg/apps.svg\" class=\"ml-2 position-relative w-15\" style=\"top: -1px;\" src=\"https://sidebar-lastmile-stage.kartrocket.com/assets/svg/apps.svg\">\n  </div>\n</button>\n  <div *ngIf=\"isModalOpen\" class=\"sr-modal\">\n    <div class=\"sr-modal-content\">\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\n      <p>{{ data }}</p>\n    </div>\n  </div>", styles: [".sr-modal{display:block;position:fixed}.close{cursor:pointer}\n"], directives: [{ type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
+SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, ngImport: i0, template: `
+    <button (click)="openModal()">Open Modal</button>
+    <div *ngIf="isModalOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p>{{ data }}</p>
+      </div>
+    </div>
+  `, isInline: true, styles: ["\n    .modal { display: block; position: fixed; /* Add styles for your modal */ }\n    .modal-content { /* Add styles for content */ }\n    .close { cursor: pointer; }\n  "], directives: [{ type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-switcher',
-                    templateUrl: './switcher.component.html',
-                    styleUrls: ['./switcher.component.scss']
+                    template: `
+    <button (click)="openModal()">Open Modal</button>
+    <div *ngIf="isModalOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p>{{ data }}</p>
+      </div>
+    </div>
+  `,
+                    styles: [`
+    .modal { display: block; position: fixed; /* Add styles for your modal */ }
+    .modal-content { /* Add styles for content */ }
+    .close { cursor: pointer; }
+  `]
                 }]
         }], propDecorators: { data: [{
                 type: Input
             }] } });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3dpdGNoZXIuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvc3dpdGNoZXIvc3JjL2xpYi9zd2l0Y2hlci5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi9wcm9qZWN0cy9zd2l0Y2hlci9zcmMvbGliL3N3aXRjaGVyLmNvbXBvbmVudC5odG1sIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsS0FBSyxFQUFVLE1BQU0sZUFBZSxDQUFDOzs7QUFPekQsTUFBTSxPQUFPLGlCQUFpQjtJQUw5QjtRQU1XLFNBQUksR0FBVyxFQUFFLENBQUM7UUFDM0IsZ0JBQVcsR0FBRyxLQUFLLENBQUM7S0FjckI7SUFYQyxRQUFRO1FBQ04sT0FBTyxDQUFDLEdBQUcsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDO0lBQ3ZDLENBQUM7SUFFRCxTQUFTO1FBQ1AsSUFBSSxDQUFDLFdBQVcsR0FBRyxJQUFJLENBQUM7SUFDMUIsQ0FBQztJQUVELFVBQVU7UUFDUixJQUFJLENBQUMsV0FBVyxHQUFHLEtBQUssQ0FBQztJQUMzQixDQUFDOzsrR0FmVSxpQkFBaUI7bUdBQWpCLGlCQUFpQiw4RUNQOUIsK2lCQVNROzRGREZLLGlCQUFpQjtrQkFMN0IsU0FBUzttQkFBQztvQkFDVCxRQUFRLEVBQUUsY0FBYztvQkFDeEIsV0FBVyxFQUFFLDJCQUEyQjtvQkFDeEMsU0FBUyxFQUFFLENBQUMsMkJBQTJCLENBQUM7aUJBQ3pDOzhCQUVVLElBQUk7c0JBQVosS0FBSyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQsIE9uSW5pdCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdsaWItc3dpdGNoZXInLFxuICB0ZW1wbGF0ZVVybDogJy4vc3dpdGNoZXIuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zd2l0Y2hlci5jb21wb25lbnQuc2NzcyddXG59KVxuZXhwb3J0IGNsYXNzIFN3aXRjaGVyQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcbiAgQElucHV0KCkgZGF0YTogc3RyaW5nID0gJyc7XG4gIGlzTW9kYWxPcGVuID0gZmFsc2U7XG5cblxuICBuZ09uSW5pdCgpOiB2b2lkIHtcbiAgICBjb25zb2xlLmxvZyhcImVudGVyIGluIG9uaW5pdCA9PT09PVwiKTtcbiAgfVxuXG4gIG9wZW5Nb2RhbCgpIHtcbiAgICB0aGlzLmlzTW9kYWxPcGVuID0gdHJ1ZTtcbiAgfVxuXG4gIGNsb3NlTW9kYWwoKSB7XG4gICAgdGhpcy5pc01vZGFsT3BlbiA9IGZhbHNlO1xuICB9XG59XG4iLCI8YnV0dG9uIChjbGljayk9XCJvcGVuTW9kYWwoKVwiIGNsYXNzPVwicC0wIG1lLTIgYXBwU3dpdGNoZXJCdG5cIj5cbiAgPGRpdiBfbmdjb250ZW50LWFmaS1jNDc9XCJcIiBjbGFzcz1cImFwcFN3aXRjaGVyVHh0XCI+IEFMTCBQUk9EVUNUUyA8aW1nIGFwcHBhdGhjb3JyZWN0aW9uPVwiXCIgZGF0YS1zcmM9XCJhc3NldHMvc3ZnL2FwcHMuc3ZnXCIgY2xhc3M9XCJtbC0yIHBvc2l0aW9uLXJlbGF0aXZlIHctMTVcIiBzdHlsZT1cInRvcDogLTFweDtcIiBzcmM9XCJodHRwczovL3NpZGViYXItbGFzdG1pbGUtc3RhZ2Uua2FydHJvY2tldC5jb20vYXNzZXRzL3N2Zy9hcHBzLnN2Z1wiPlxuICA8L2Rpdj5cbjwvYnV0dG9uPlxuICA8ZGl2ICpuZ0lmPVwiaXNNb2RhbE9wZW5cIiBjbGFzcz1cInNyLW1vZGFsXCI+XG4gICAgPGRpdiBjbGFzcz1cInNyLW1vZGFsLWNvbnRlbnRcIj5cbiAgICAgIDxzcGFuIGNsYXNzPVwiY2xvc2VcIiAoY2xpY2spPVwiY2xvc2VNb2RhbCgpXCI+JnRpbWVzOzwvc3Bhbj5cbiAgICAgIDxwPnt7IGRhdGEgfX08L3A+XG4gICAgPC9kaXY+XG4gIDwvZGl2PiJdfQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3dpdGNoZXIuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvc3dpdGNoZXIvc3JjL2xpYi9zd2l0Y2hlci5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7OztBQW1CakQsTUFBTSxPQUFPLGlCQUFpQjtJQWpCOUI7UUFrQlcsU0FBSSxHQUFXLEVBQUUsQ0FBQztRQUMzQixnQkFBVyxHQUFHLEtBQUssQ0FBQztLQVNyQjtJQVBDLFNBQVM7UUFDUCxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQztJQUMxQixDQUFDO0lBRUQsVUFBVTtRQUNSLElBQUksQ0FBQyxXQUFXLEdBQUcsS0FBSyxDQUFDO0lBQzNCLENBQUM7OytHQVZVLGlCQUFpQjttR0FBakIsaUJBQWlCLDhFQWZsQjs7Ozs7Ozs7R0FRVDs0RkFPVSxpQkFBaUI7a0JBakI3QixTQUFTO21CQUFDO29CQUNULFFBQVEsRUFBRSxjQUFjO29CQUN4QixRQUFRLEVBQUU7Ozs7Ozs7O0dBUVQ7b0JBQ0QsTUFBTSxFQUFFLENBQUM7Ozs7R0FJUixDQUFDO2lCQUNIOzhCQUVVLElBQUk7c0JBQVosS0FBSyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnbGliLXN3aXRjaGVyJyxcbiAgdGVtcGxhdGU6IGBcbiAgICA8YnV0dG9uIChjbGljayk9XCJvcGVuTW9kYWwoKVwiPk9wZW4gTW9kYWw8L2J1dHRvbj5cbiAgICA8ZGl2ICpuZ0lmPVwiaXNNb2RhbE9wZW5cIiBjbGFzcz1cIm1vZGFsXCI+XG4gICAgICA8ZGl2IGNsYXNzPVwibW9kYWwtY29udGVudFwiPlxuICAgICAgICA8c3BhbiBjbGFzcz1cImNsb3NlXCIgKGNsaWNrKT1cImNsb3NlTW9kYWwoKVwiPiZ0aW1lczs8L3NwYW4+XG4gICAgICAgIDxwPnt7IGRhdGEgfX08L3A+XG4gICAgICA8L2Rpdj5cbiAgICA8L2Rpdj5cbiAgYCxcbiAgc3R5bGVzOiBbYFxuICAgIC5tb2RhbCB7IGRpc3BsYXk6IGJsb2NrOyBwb3NpdGlvbjogZml4ZWQ7IC8qIEFkZCBzdHlsZXMgZm9yIHlvdXIgbW9kYWwgKi8gfVxuICAgIC5tb2RhbC1jb250ZW50IHsgLyogQWRkIHN0eWxlcyBmb3IgY29udGVudCAqLyB9XG4gICAgLmNsb3NlIHsgY3Vyc29yOiBwb2ludGVyOyB9XG4gIGBdXG59KVxuZXhwb3J0IGNsYXNzIFN3aXRjaGVyQ29tcG9uZW50IHtcbiAgQElucHV0KCkgZGF0YTogc3RyaW5nID0gJyc7XG4gIGlzTW9kYWxPcGVuID0gZmFsc2U7XG5cbiAgb3Blbk1vZGFsKCkge1xuICAgIHRoaXMuaXNNb2RhbE9wZW4gPSB0cnVlO1xuICB9XG5cbiAgY2xvc2VNb2RhbCgpIHtcbiAgICB0aGlzLmlzTW9kYWxPcGVuID0gZmFsc2U7XG4gIH1cbn0iXX0=
