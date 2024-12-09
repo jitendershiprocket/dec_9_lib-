@@ -1,5 +1,5 @@
 import * as i0 from '@angular/core';
-import { Injectable, Component, NgModule } from '@angular/core';
+import { Injectable, Component, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 class SwitcherService {
@@ -20,12 +20,12 @@ class SwitcherComponent {
     }
 }
 SwitcherComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", ngImport: i0, template: `<h6>Hello this is switcher library</h6>`, isInline: true, styles: [""] });
+SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", ngImport: i0, template: `<h6>this is update content of library</h6>`, isInline: true, styles: [""] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'lib-switcher',
-                    template: `<h6>Hello this is switcher library</h6>`,
+                    template: `<h6>this is update content of library</h6>`,
                     styles: [``]
                 }]
         }] });
@@ -40,7 +40,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImpo
             args: [{
                     declarations: [SwitcherComponent],
                     imports: [CommonModule],
-                    exports: [SwitcherComponent] // Export the component for use in other modules
+                    exports: [SwitcherComponent],
+                    schemas: [CUSTOM_ELEMENTS_SCHEMA]
                 }]
         }] });
 

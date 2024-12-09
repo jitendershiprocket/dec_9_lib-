@@ -47,12 +47,12 @@
         return SwitcherComponent;
     }());
     SwitcherComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SwitcherComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", ngImport: i0__namespace, template: "<h6>Hello this is switcher library</h6>", isInline: true, styles: [""] });
+    SwitcherComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", ngImport: i0__namespace, template: "<h6>this is update content of library</h6>", isInline: true, styles: [""] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-switcher',
-                        template: "<h6>Hello this is switcher library</h6>",
+                        template: "<h6>this is update content of library</h6>",
                         styles: [""]
                     }]
             }] });
@@ -70,7 +70,8 @@
                 args: [{
                         declarations: [SwitcherComponent],
                         imports: [common.CommonModule],
-                        exports: [SwitcherComponent] // Export the component for use in other modules
+                        exports: [SwitcherComponent],
+                        schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
             }] });
 
