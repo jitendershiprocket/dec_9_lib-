@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'lib-switcher',
@@ -17,7 +17,7 @@ import { Component, Input } from '@angular/core';
     .close { cursor: pointer; }
   `]
 })
-export class SwitcherComponent {
+export class SwitcherComponent implements OnChanges {
   @Input() data: string = '';
   isModalOpen = false;
 
@@ -27,5 +27,9 @@ export class SwitcherComponent {
 
   closeModal() {
     this.isModalOpen = false;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Changes:', changes);
   }
 }

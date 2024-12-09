@@ -26,9 +26,12 @@ class SwitcherComponent {
     closeModal() {
         this.isModalOpen = false;
     }
+    ngOnChanges(changes) {
+        console.log('Changes:', changes);
+    }
 }
 SwitcherComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: SwitcherComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, ngImport: i0, template: `
+SwitcherComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, usesOnChanges: true, ngImport: i0, template: `
     <button (click)="openModal()">Open Modal</button>
     <div *ngIf="isModalOpen" class="modal">
       <div class="modal-content">
