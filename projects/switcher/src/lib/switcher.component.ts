@@ -1,15 +1,9 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'lib-switcher',
   template: `
-    <button (click)="openModal()">Open Modal</button>
-    <div *ngIf="isModalOpen" class="modal">
-      <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <p>{{ data }}</p>
-      </div>
-    </div>
+    hi hello switcher working
   `,
   styles: [`
     .modal { display: block; position: fixed; /* Add styles for your modal */ }
@@ -17,19 +11,10 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
     .close { cursor: pointer; }
   `]
 })
-export class SwitcherComponent implements OnChanges {
-  @Input() data: string = '';
-  isModalOpen = false;
+export class SwitcherComponent implements OnInit {
 
-  openModal() {
-    this.isModalOpen = true;
+  ngOnInit(): void {
+    console.log("hkoshdf=-===========");
   }
 
-  closeModal() {
-    this.isModalOpen = false;
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('Changes:', changes);
-  }
 }
