@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SwitcherComponent } from './switcher.component';
 
 @NgModule({
   declarations: [SwitcherComponent],
   imports: [CommonModule],
-  exports: [SwitcherComponent] // Export the component for use in other modules
+  exports: [SwitcherComponent], // Export the component for use in other modules
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SwitcherModule {}

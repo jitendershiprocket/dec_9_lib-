@@ -81,7 +81,8 @@
                 args: [{
                         declarations: [SwitcherComponent],
                         imports: [i1.CommonModule],
-                        exports: [SwitcherComponent] // Export the component for use in other modules
+                        exports: [SwitcherComponent],
+                        schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
             }] });
 

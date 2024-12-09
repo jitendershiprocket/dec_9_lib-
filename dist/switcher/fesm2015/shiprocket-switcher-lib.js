@@ -1,5 +1,5 @@
 import * as i0 from '@angular/core';
-import { Injectable, Component, Input, NgModule } from '@angular/core';
+import { Injectable, Component, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import * as i1 from '@angular/common';
 import { CommonModule } from '@angular/common';
 
@@ -73,7 +73,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImpo
             args: [{
                     declarations: [SwitcherComponent],
                     imports: [CommonModule],
-                    exports: [SwitcherComponent] // Export the component for use in other modules
+                    exports: [SwitcherComponent],
+                    schemas: [CUSTOM_ELEMENTS_SCHEMA]
                 }]
         }] });
 
