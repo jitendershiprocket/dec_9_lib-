@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common')) :
     typeof define === 'function' && define.amd ? define('shiprocket-switcher-lib', ['exports', '@angular/core', '@angular/common'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["shiprocket-switcher-lib"] = {}, global.ng.core, global.ng.common));
-})(this, (function (exports, i0, common) { 'use strict';
+})(this, (function (exports, i0, i1) { 'use strict';
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -23,6 +23,7 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var i1__namespace = /*#__PURE__*/_interopNamespace(i1);
 
     var SwitcherService = /** @class */ (function () {
         function SwitcherService() {
@@ -40,22 +41,32 @@
 
     var SwitcherComponent = /** @class */ (function () {
         function SwitcherComponent() {
+            this.data = '';
+            this.isModalOpen = false;
         }
         SwitcherComponent.prototype.ngOnInit = function () {
             console.log("enter in oninit =====");
         };
+        SwitcherComponent.prototype.openModal = function () {
+            this.isModalOpen = true;
+        };
+        SwitcherComponent.prototype.closeModal = function () {
+            this.isModalOpen = false;
+        };
         return SwitcherComponent;
     }());
     SwitcherComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    SwitcherComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", ngImport: i0__namespace, template: "<h6>this is update content of library</h6>", isInline: true, styles: [""] });
+    SwitcherComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: SwitcherComponent, selector: "lib-switcher", inputs: { data: "data" }, ngImport: i0__namespace, template: "\n  <button (click)=\"openModal()\">Open Modal</button>\n  <div *ngIf=\"isModalOpen\" class=\"modal\">\n    <div class=\"modal-content\">\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\n      <p>{{ data }}</p>\n    </div>\n  </div>\n", isInline: true, styles: ["\n  .modal { display: block; position: fixed; /* Add styles for your modal */ }\n  .modal-content { /* Add styles for content */ }\n  .close { cursor: pointer; }\n"], directives: [{ type: i1__namespace.NgIf, selector: "[ngIf]" }] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'lib-switcher',
-                        template: "<h6>this is update content of library</h6>",
-                        styles: [""]
+                        template: "\n  <button (click)=\"openModal()\">Open Modal</button>\n  <div *ngIf=\"isModalOpen\" class=\"modal\">\n    <div class=\"modal-content\">\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\n      <p>{{ data }}</p>\n    </div>\n  </div>\n",
+                        styles: ["\n  .modal { display: block; position: fixed; /* Add styles for your modal */ }\n  .modal-content { /* Add styles for content */ }\n  .close { cursor: pointer; }\n"]
                     }]
-            }] });
+            }], propDecorators: { data: [{
+                    type: i0.Input
+                }] } });
 
     var SwitcherModule = /** @class */ (function () {
         function SwitcherModule() {
@@ -63,13 +74,13 @@
         return SwitcherModule;
     }());
     SwitcherModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
-    SwitcherModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherModule, declarations: [SwitcherComponent], imports: [common.CommonModule], exports: [SwitcherComponent] });
-    SwitcherModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherModule, imports: [[common.CommonModule]] });
+    SwitcherModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherModule, declarations: [SwitcherComponent], imports: [i1.CommonModule], exports: [SwitcherComponent] });
+    SwitcherModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherModule, imports: [[i1.CommonModule]] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: SwitcherModule, decorators: [{
                 type: i0.NgModule,
                 args: [{
                         declarations: [SwitcherComponent],
-                        imports: [common.CommonModule],
+                        imports: [i1.CommonModule],
                         exports: [SwitcherComponent],
                         schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
